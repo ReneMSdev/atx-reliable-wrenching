@@ -1,0 +1,115 @@
+'use client'
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { FaPhoneAlt, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaLocationDot } from 'react-icons/fa6'
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // The '40px' in the clip-path determines the "sharpness" of the angle.
+  // Using a fixed px value here ensures the angle never changes on resize.
+  const angleSlantNavbar = 'polygon(0 0, 100% 0, calc(100% - 46px) 100%, 0% 100%)'
+  const angleSlantTop = 'polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0% 100%)'
+
+  return (
+    <nav className='w-full flex flex-col font-sans fixed top-0 z-50'>
+      {/* --- Top Bar --- */}
+      <div
+        className={`transition-all duration-300 ease-in-out ${
+          isScrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+        }`}
+      >
+        <div className='flex h-10 w-full text-white text-xs md:text-sm bg-accent'>
+          {/* Black Section - Fixed Angle */}
+          <div
+            className='bg-black flex items-center pl-8 pr-16 h-full shrink-0'
+            style={{ clipPath: angleSlantTop }}
+          >
+            <span className='whitespace-nowrap pr-6'>Welcome, new and returning customers.</span>
+          </div>
+
+          {/* Blue Section - Socials & Hours */}
+          <div className='grow flex justify-end items-center px-8'>
+            <div className='flex gap-4 items-center pr-8'>
+              <span className='hidden lg:inline font-semibold'>
+                Monday - Friday <span className='font-bold'>8:00 AM - 5:00 PM</span> | Saturday{' '}
+                <span className='font-bold'>9:00 AM - 1:00 PM</span>
+              </span>
+            </div>
+            <div className='flex gap-4 items-center'>
+              <Link
+                href='#'
+                className='hover:scale-110 transition-transform'
+              >
+                <FaFacebook className='text-white text-xl' />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* --- Main Navigation --- */}
+      <div className='relative bg-white border-b border-gray-100 shadow-sm'>
+        <div className='flex h-26 w-full'>
+          {/* Logo Section - Aligned Left with Fixed Angle */}
+          <div
+            className='relative z-10 bg-black flex items-center pl-8 pr-20 shrink-0'
+            style={{ clipPath: angleSlantNavbar }}
+          >
+            {/* Replace with your <img> component */}
+            <div className='text-white font-black text-xl italic leading-tight'>
+              <span className='text-blue-400'>ATX</span>
+              <br />
+              RELIABLE WRENCHING
+            </div>
+          </div>
+
+          {/* Info and Links Section */}
+          <div className='grow flex flex-col justify-center'>
+            {/* Top Row: Contact Info */}
+            <div className='flex justify-end gap-8 items-center pr-8'>
+              <div className='flex items-center gap-2'>
+                <FaPhoneAlt className='text-accent text-lg' />
+                <span className='text-md font-bold'>(512) 123 - 7456</span>
+              </div>
+              <div className='hidden sm:flex items-center gap-2 text-gray-500 text-sm'>
+                <FaLocationDot className='text-accent text-lg' />
+                <span className='italic'>Proudly serving the Greater Austin area.</span>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className='h-0.5 w-full bg-gray-100 my-2' />
+
+            {/* Bottom Row: Nav Links */}
+            <div className='flex justify-end items-center gap-6 pr-8'>
+              {['Home', 'About Us', 'Our Services', 'Our Work', 'Contact Us'].map((item) => (
+                <Link
+                  key={item}
+                  href={`#`}
+                  className='text-gray-800 hover:text-accent font-bold text-sm tracking-tight transition-colors'
+                >
+                  {item}
+                </Link>
+              ))}
+              <button className='bg-black text-white px-8 py-3 font-bold text-xs tracking-widest hover:bg-accent transition-all cursor-pointer'>
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  )
+}
+
+export default Navbar

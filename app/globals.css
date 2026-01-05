@@ -5,8 +5,8 @@
   --foreground: #171717;
 
   /* Fonts */
-  --font-sans: 'Inter', Roboto, Arial, sans-serif;
-  --font-condensed: 'Roboto Condensed', Roboto, Arial, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+  --font-condensed: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
   --font-display: 'Squada One', Helvetica, sans-serif;
 }
 
@@ -30,12 +30,16 @@
   --color-shadow-soft: #e2e7e9;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-surface: #1b1d20;
+    --color-surface-dark: #0a0a0a;
+    --color-ink: #ededed;
+    --color-ink-inverse: #000000;
   }
-}
+} */
 
 body {
   background: var(--background);
