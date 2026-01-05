@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { FaArrowRight } from 'react-icons/fa'
 
 const Hero = () => {
   // Slant overlay to match Navbar logo
@@ -26,19 +27,21 @@ const Hero = () => {
       <div className='relative z-10 h-full flex'>
         <div className='w-3/5 flex flex-col justify-center items-center px-6 text-white'>
           <div>
-            <h1 className='font-display text-5xl font-bold mb-3'>ATX Reliable Wrenching</h1>
-            <h2 className='font-display text-4xl font-bold mb-5'>
+            <h1 className='font-display text-5xl font-bold tracking-wide mb-3'>
+              ATX Reliable Wrenching
+            </h1>
+            <h2 className='font-display text-4xl font-bold tracking-wide mb-5'>
               Quality Service Delivered
               <br />
               to Your Door
             </h2>
 
             <div className='flex flex-wrap gap-5 font-sans'>
-              <button className='bg-accent text-white px-8 py-3 font-bold text-xs tracking-widest hover:bg-accent-dark transition-all cursor-pointer'>
+              <button className='flex items-center justify-center gap-1 bg-accent text-white px-8 py-3 font-bold text-sm tracking-wide hover:bg-accent-hover transition-all duration-200 cursor-pointer min-w-[130px]'>
                 Learn More
               </button>
 
-              <button className='bg-white text-black px-8 py-3 font-bold text-xs tracking-widest hover:bg-accent hover:text-white transition-all cursor-pointer'>
+              <button className='flex items-center justify-center gap-1 bg-white text-black px-8 py-3 font-bold text-sm tracking-wide hover:bg-accent hover:text-white transition-all duration-200 cursor-pointer min-w-[130px]'>
                 Book Now
               </button>
             </div>
