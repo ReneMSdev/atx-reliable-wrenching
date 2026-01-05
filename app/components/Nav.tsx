@@ -59,7 +59,7 @@ const Navbar = () => {
       </div>
 
       {/* --- Main Navigation --- */}
-      <div className='relative bg-white border-b-2 border-gray-200'>
+      <div className='relative bg-white  shadow-sm'>
         <div className='flex h-27 w-full'>
           {/* Logo Section - Aligned Left with Fixed Angle */}
           <div
