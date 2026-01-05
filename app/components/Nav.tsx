@@ -1,7 +1,7 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { FaPhoneAlt, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaPhoneAlt, FaFacebook } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
 import Image from 'next/image'
 
@@ -59,8 +59,8 @@ const Navbar = () => {
       </div>
 
       {/* --- Main Navigation --- */}
-      <div className='relative bg-white border-b border-gray-100 shadow-sm'>
-        <div className='flex h-26 w-full'>
+      <div className='relative bg-white border-b-2 border-gray-200'>
+        <div className='flex h-27 w-full'>
           {/* Logo Section - Aligned Left with Fixed Angle */}
           <div
             className='relative z-10 bg-black flex items-center pl-8 pr-20 shrink-0'
