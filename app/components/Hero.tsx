@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 
 const Hero = () => {
@@ -27,8 +26,8 @@ const Hero = () => {
       <div className='relative z-10 h-full flex'>
         <div className='w-3/5 flex flex-col justify-center items-center px-6 text-white'>
           <div>
-            <h1 className='font-display text-4xl font-bold mb-6'>ATX Reliable Wrenching</h1>
-            <h2 className='text-3xl font-bold mb-6'>
+            <h1 className='font-display text-5xl font-bold mb-3'>ATX Reliable Wrenching</h1>
+            <h2 className='font-display text-4xl font-bold mb-5'>
               Quality Service Delivered
               <br />
               to Your Door
@@ -39,7 +38,7 @@ const Hero = () => {
                 Learn More
               </button>
 
-              <button className='bg-black text-white px-8 py-3 font-bold text-xs tracking-widest hover:bg-accent transition-all cursor-pointer'>
+              <button className='bg-white text-black px-8 py-3 font-bold text-xs tracking-widest hover:bg-accent hover:text-white transition-all cursor-pointer'>
                 Book Now
               </button>
             </div>
