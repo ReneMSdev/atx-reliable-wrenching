@@ -10,7 +10,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
+      setIsScrolled(window.scrollY > 5)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -22,13 +22,9 @@ const Navbar = () => {
   const angleSlantTop = 'polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0% 100%)'
 
   return (
-    <nav className='w-full flex flex-col font-sans fixed top-0 z-50'>
+    <nav className='w-full fixed font-sans top-0 left-0 z-50'>
       {/* --- Top Bar --- */}
-      <div
-        className={`transition-all duration-300 ease-in-out ${
-          isScrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
-        }`}
-      >
+      <div className={``}>
         <div className='flex h-10 w-full text-white text-xs md:text-sm bg-accent'>
           {/* Black Section - Fixed Angle */}
           <div
@@ -59,7 +55,9 @@ const Navbar = () => {
       </div>
 
       {/* --- Main Navigation --- */}
-      <div className='relative bg-white  shadow-sm'>
+      <div
+        className={`relative bg-white  shadow-sm transition-all duration-600 ease-in-out ${isScrolled ? '-mt-10' : 'mt-0'}`}
+      >
         <div className='flex h-27 w-full'>
           {/* Logo Section - Aligned Left with Fixed Angle */}
           <div
@@ -89,7 +87,7 @@ const Navbar = () => {
             </div>
 
             {/* Divider */}
-            <div className='h-0.5 w-full bg-gray-100 my-2' />
+            <div className='h-0.5 w-full bg-gray-100 my-2.5' />
 
             {/* Bottom Row: Nav Links */}
             <div className='flex justify-end items-center gap-6 pr-8'>
