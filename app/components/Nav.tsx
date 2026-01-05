@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { FaPhoneAlt, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
+import Image from 'next/image'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,7 +35,7 @@ const Navbar = () => {
             className='bg-black flex items-center pl-8 pr-16 h-full shrink-0'
             style={{ clipPath: angleSlantTop }}
           >
-            <span className='whitespace-nowrap pr-6'>Welcome, new and returning customers.</span>
+            <span className='whitespace-nowrap'>Welcome, new and returning customers.</span>
           </div>
 
           {/* Blue Section - Socials & Hours */}
@@ -65,12 +66,12 @@ const Navbar = () => {
             className='relative z-10 bg-black flex items-center pl-8 pr-20 shrink-0'
             style={{ clipPath: angleSlantNavbar }}
           >
-            {/* Replace with your <img> component */}
-            <div className='text-white font-black text-xl italic leading-tight'>
-              <span className='text-blue-400'>ATX</span>
-              <br />
-              RELIABLE WRENCHING
-            </div>
+            <Image
+              src='/images/LogoSmall.png'
+              alt='Logo'
+              height={80}
+              width={148}
+            />
           </div>
 
           {/* Info and Links Section */}
