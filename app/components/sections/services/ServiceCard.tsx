@@ -13,7 +13,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ image, Icon, title, description }: ServiceCardProps) {
   return (
-    <div className='bg-surface p-5 w-full max-w-xs border-b-4 border-gray-300'>
+    <div className='bg-surface p-5 w-full max-w-[280px] border-b-4 border-gray-300'>
       {/* Image wrapper */}
       <div className='relative w-full aspect-3/2'>
         <Image
@@ -27,8 +27,8 @@ export default function ServiceCard({ image, Icon, title, description }: Service
         {/* Flair */}
         <div className='absolute bottom-0 left-0 flex items-end'>
           {/* Square */}
-          <div className='bg-accent w-20 h-20 flex items-center justify-center translate-y-[29px]'>
-            <Icon className='text-white text-4xl' />
+          <div className='bg-accent w-14 h-14 md:w-16 md:h-16 flex items-center justify-center translate-y-[29px]'>
+            <Icon className='text-white text-2xl md:text-3xl' />
           </div>
 
           {/* Extension */}
@@ -48,7 +48,7 @@ export default function ServiceCard({ image, Icon, title, description }: Service
       </div>
 
       {/* Title */}
-      <h3 className='font-display text-3xl pt-10 pb-2'>{title}</h3>
+      <h3 className='font-display text-2xl md:text-3xl pt-10'>{title}</h3>
 
       {/* Body */}
       <p className='text-sm pb-5'>{description}</p>

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { FaArrowRight } from 'react-icons/fa'
 
 const Hero = () => {
   // Slant overlay to match Navbar logo
