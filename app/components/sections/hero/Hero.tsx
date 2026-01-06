@@ -6,7 +6,7 @@ const Hero = () => {
 
   return (
     // h is calculated by subtracting the height of the navbar from the viewport height
-    <section className='relative w-full h-[calc(100vh-80px)] mt-[80px] overflow-hidden'>
+    <section className='relative w-full h-[calc(100vh-80px)] overflow-hidden'>
       {/* Background Image */}
       <Image
         src='https://picsum.photos/1200/800'

@@ -1,9 +1,11 @@
 'use client'
 
-import React, { useState, useEffect, useCallback } from 'react'
+import { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ServiceCard from './ServiceCard'
 import { FaGasPump, FaTools, FaCar, FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import { usePrevNextButtons } from './embla/ArrowButtons'
+import { PrevButton, NextButton } from './embla/ArrowButtons'
 
 const services = [
   {
@@ -51,40 +53,22 @@ export default function ServicesCarousel() {
     loop: false,
   })
 
-  const [canScrollPrev, setCanScrollPrev] = useState(false)
-  const [canScrollNext, setCanScrollNext] = useState(false)
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return
-    setCanScrollPrev(emblaApi.canScrollPrev())
-    setCanScrollNext(emblaApi.canScrollNext())
-  }, [emblaApi])
-
-  useEffect(() => {
-    if (!emblaApi) return
-    emblaApi.on('select', onSelect)
-    emblaApi.on('reInit', onSelect)
-  }, [emblaApi, onSelect])
+  const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =
+    usePrevNextButtons(emblaApi)
 
   return (
     <>
-      <div className='w-full max-w-xl md:max-w-2xl lg:max-w-5xl mx-auto px-2 overflow-hidden'>
+      <div className='w-full max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 overflow-hidden'>
         {/* Navigation buttons above the carousel */}
         <div className='flex justify-end gap-2 mb-8'>
-          <button
-            onClick={() => emblaApi?.scrollPrev()}
-            disabled={!canScrollPrev}
-            className='w-10 h-10 bg-accent text-white flex items-center justify-center shadow-lg'
-          >
-            <FaArrowLeft className='text-white' />
-          </button>
-          <button
-            onClick={() => emblaApi?.scrollNext()}
-            disabled={!canScrollNext}
-            className='w-10 h-10 bg-black text-white flex items-center justify-center shadow-lg'
-          >
-            <FaArrowRight className='text-white' />
-          </button>
+          <PrevButton
+            onClick={onPrevButtonClick}
+            disabled={prevBtnDisabled}
+          />
+          <NextButton
+            onClick={onNextButtonClick}
+            disabled={nextBtnDisabled}
+          />
         </div>
 
         {/* Carousel viewport */}
@@ -96,14 +80,16 @@ export default function ServicesCarousel() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className='flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.3333%] px-3'
+                className='flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.3333%]'
               >
-                <ServiceCard
-                  image={service.image}
-                  title={service.title}
-                  description={service.description}
-                  Icon={service.Icon}
-                />
+                <div className='flex w-full items-center justify-center'>
+                  <ServiceCard
+                    image={service.image}
+                    title={service.title}
+                    description={service.description}
+                    Icon={service.Icon}
+                  />
+                </div>
               </div>
             ))}
           </div>

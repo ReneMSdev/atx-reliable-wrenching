@@ -1,28 +1,17 @@
 'use client'
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { FaPhoneAlt, FaFacebook } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
 import Image from 'next/image'
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 5)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   // The '40px' in the clip-path determines the "sharpness" of the angle.
   // Using a fixed px value here ensures the angle never changes on resize.
   const angleSlantNavbar = 'polygon(0 0, 100% 0, calc(100% - 46px) 100%, 0% 100%)'
   const angleSlantTop = 'polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0% 100%)'
 
   return (
-    <nav className='w-full fixed font-sans top-0 left-0 z-50'>
+    <nav className='w-full font-sans top-0 left-0'>
       {/* --- Top Bar --- */}
       <div className={``}>
         <div className='flex h-10 w-full text-white text-xs md:text-sm bg-accent'>
@@ -55,9 +44,7 @@ const Navbar = () => {
       </div>
 
       {/* --- Main Navigation --- */}
-      <div
-        className={`relative bg-white  shadow-sm transition-all duration-600 ease-in-out ${isScrolled ? '-mt-10' : 'mt-0'}`}
-      >
+      <div className={`relative bg-white  shadow-sm`}>
         <div className='flex h-27 w-full'>
           {/* Logo Section - Aligned Left with Fixed Angle */}
           <div
@@ -91,7 +78,7 @@ const Navbar = () => {
 
             {/* Bottom Row: Nav Links */}
             <div className='flex justify-end items-center gap-6 pr-8'>
-              {['Home', 'About Us', 'Our Services', 'Our Work', 'Contact Us'].map((item) => (
+              {['About Us', 'Our Services', 'Our Work', 'Contact Us'].map((item) => (
                 <Link
                   key={item}
                   href={`#`}
