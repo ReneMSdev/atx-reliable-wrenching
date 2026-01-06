@@ -27,16 +27,16 @@ export default function ServiceCard({ image, Icon, title, description }: Service
         {/* Flair */}
         <div className='absolute bottom-0 left-0 flex items-end'>
           {/* Square */}
-          <div className='bg-accent w-14 h-14 md:w-16 md:h-16 flex items-center justify-center translate-y-[29px]'>
+          <div className='bg-accent w-14 h-14 md:w-16 md:h-16 flex items-center justify-center translate-y-[19px]'>
             <Icon className='text-white text-2xl md:text-3xl' />
           </div>
 
           {/* Extension */}
           <svg
             width='120'
-            height='30'
-            viewBox='0 0 120 30'
-            className='block translate-y-[29px]'
+            height='20'
+            viewBox='0 0 120 20'
+            className='block translate-y-[19px]'
             aria-hidden
           >
             <path
