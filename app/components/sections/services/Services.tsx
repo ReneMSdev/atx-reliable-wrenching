@@ -8,7 +8,9 @@ const Services = () => {
     <>
       <div className='flex flex-col py-10 px-6 max-w-6xl mx-auto'>
         {/* Header row: title + buttons */}
-        <h1 className='text-4xl font-display text-accent tracking-wide'>Our Services</h1>
+        <h1 className='text-4xl md:text-5xl font-display text-accent tracking-wide'>
+          Our Services
+        </h1>
         <Image
           src={TitleFlair}
           alt='Services Title Flair'

@@ -2,7 +2,8 @@
 
 import React from 'react'
 import Image from 'next/image'
-import AboutIllustration from '@/public/images/about-illustration.jpg' // Figma export
+import AboutBg from '@/public/images/about-bg.jpg' // Figma export
+import AboutImage from 'public/images/aboutImage.png'
 import TitleFlair from 'public/images/TitleFlair.svg'
 
 export default function AboutSection() {
@@ -14,12 +15,17 @@ export default function AboutSection() {
       <div className='max-w-6xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-10'>
         {/* Left Column - Image */}
         <div className='md:w-1/2 flex justify-center'>
-          <h1 className='text-4xl font-display text-accent tracking-wide'>About Image</h1>
+          <Image
+            src={AboutImage}
+            alt='About Image'
+            width={500}
+            height={500}
+          />
         </div>
 
         {/* Right Column - Text */}
         <div className='md:w-1/2 text-left px-3'>
-          <h2 className='text-4xl font-display text-accent tracking-wide'>About Us</h2>
+          <h2 className='text-4xl md:text-5xl font-display text-accent tracking-wide'>About Us</h2>
           <Image
             src={TitleFlair}
             alt='Services Title Flair'
