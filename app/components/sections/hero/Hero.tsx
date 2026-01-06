@@ -6,7 +6,7 @@ const Hero = () => {
 
   return (
     // h is calculated by subtracting the height of the navbar from the viewport height
-    <section className='relative w-full h-[calc(100vh-80px)] overflow-hidden'>
+    <section className='relative w-full h-[calc(100vh-140px)] overflow-hidden'>
       {/* Background Image */}
       <Image
         src='https://picsum.photos/1200/800'
@@ -26,10 +26,10 @@ const Hero = () => {
       <div className='relative z-10 h-full flex'>
         <div className='w-3/5 flex flex-col justify-center items-center px-6 text-white'>
           <div>
-            <h1 className='font-display text-5xl font-bold tracking-wide mb-3'>
+            <h1 className='font-display text-5xl lg:text-6xl tracking-wide mb-3'>
               ATX Reliable Wrenching
             </h1>
-            <h2 className='font-display text-4xl font-bold tracking-wide mb-5'>
+            <h2 className='font-display text-3xl lg:text-4xl tracking-wide mb-5'>
               Quality Service Delivered
               <br />
               to Your Door
