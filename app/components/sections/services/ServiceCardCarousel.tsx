@@ -1,11 +1,11 @@
 'use client'
 
-import { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ServiceCard from './ServiceCard'
-import { FaGasPump, FaTools, FaCar, FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import { FaGasPump, FaTools, FaCar } from 'react-icons/fa'
 import { usePrevNextButtons } from './embla/ArrowButtons'
 import { PrevButton, NextButton } from './embla/ArrowButtons'
+import { useDotButton, DotButton } from './embla/DotButton'
 
 const services = [
   {
@@ -56,6 +56,8 @@ export default function ServicesCarousel() {
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =
     usePrevNextButtons(emblaApi)
 
+  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi)
+
   return (
     <>
       <div className='w-full max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 overflow-hidden'>
@@ -91,6 +93,17 @@ export default function ServicesCarousel() {
                   />
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Dots */}
+          <div className='flex justify-center mt-4 gap-2'>
+            {scrollSnaps.map((scrollSnap, index) => (
+              <DotButton
+                key={index}
+                isSelected={selectedIndex === index}
+                onClick={() => onDotButtonClick(index)}
+              />
             ))}
           </div>
         </div>
