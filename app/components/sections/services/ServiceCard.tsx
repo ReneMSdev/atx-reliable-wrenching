@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { IconType } from 'react-icons'
 import ReadMoreBtn from '@/components/ui/ReadMoreBtn'
+import { JSX } from 'react'
 
 interface ServiceCardProps {
   image: string
@@ -11,7 +12,12 @@ interface ServiceCardProps {
   description: string
 }
 
-export default function ServiceCard({ image, Icon, title, description }: ServiceCardProps) {
+export default function ServiceCard({
+  image,
+  Icon,
+  title,
+  description,
+}: ServiceCardProps): JSX.Element {
   return (
     <div className='bg-surface p-5 w-full max-w-[280px] border-b-4 border-gray-300'>
       {/* Image wrapper */}
