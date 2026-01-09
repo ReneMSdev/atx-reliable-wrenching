@@ -23,25 +23,26 @@ export default function Contact() {
       <div className='relative z-10'>
         <div className='max-w-6xl mx-auto px-6 py-10'>
           {/* Contact Us h1 - Top Left */}
-          <h1 className='text-4xl md:text-5xl font-display text-accent tracking-wide'>
+          <h1 className='text-4xl lg:text-5xl font-display text-accent tracking-wide'>
             Contact Us
           </h1>
-          <Image
-            src={TitleFlair}
-            alt='Services Title Flair'
-            width={120}
-            height={4}
-            className='mb-10'
-          />
+          <div className='flex justify-start mb-10'>
+            <Image
+              src={TitleFlair}
+              alt='Services Title Flair'
+              width={120}
+              height={4}
+            />
+          </div>
 
           {/* Grid for two columns */}
-          <div className='grid gap-10 items-start grid-cols-1 [@media(min-width:1000px)]:grid-cols-2'>
+          <div className='grid gap-10 grid-cols-1 [@media(min-width:1000px)]:grid-cols-2'>
             {/* First Column - Contact Info (top on small, left on medium+) */}
-            <div className='flex flex-col gap-8'>
+            <div className='flex flex-col gap-8 text-center lg:text-left'>
               {/* Available Hours */}
               <div className='flex flex-col gap-4'>
-                <h2 className='text-2xl md:text-3xl font-display tracking-wide'>Available Hours</h2>
-                <div className='flex flex-col gap-1'>
+                <h2 className='text-3xl font-display tracking-wide'>Available Hours</h2>
+                <div className='flex flex-col gap-1 items-center lg:items-start'>
                   <span className='text-lg font-bold'>
                     Monday - Friday <span className='font-normal'>8:00 AM - 5:00 PM</span>
                   </span>
@@ -53,8 +54,8 @@ export default function Contact() {
 
               {/* Call Us */}
               <div className='flex flex-col gap-4'>
-                <h2 className='text-2xl md:text-3xl font-display tracking-wide'>Call Us</h2>
-                <div className='flex items-center gap-3'>
+                <h2 className='text-3xl font-display tracking-wide'>Call Us</h2>
+                <div className='flex items-center gap-3 justify-center lg:justify-start'>
                   <FaPhoneAlt className='text-accent text-xl' />
                   <span className='text-lg font-semibold'>(512) 123 - 7456</span>
                 </div>
@@ -62,10 +63,8 @@ export default function Contact() {
 
               {/* Send Us an Email */}
               <div className='flex flex-col gap-4'>
-                <h2 className='text-2xl md:text-3xl font-display tracking-wide'>
-                  Send Us an Email
-                </h2>
-                <div className='flex items-center gap-3'>
+                <h2 className='text-3xl font-display tracking-wide'>Send Us an Email</h2>
+                <div className='flex items-center gap-3 justify-center lg:justify-start'>
                   <FaEnvelope className='text-accent text-xl' />
                   <span className='text-lg'>info@atxreliablewrenching.com</span>
                 </div>
@@ -73,8 +72,8 @@ export default function Contact() {
 
               {/* Our Socials */}
               <div className='flex flex-col gap-4'>
-                <h2 className='text-2xl md:text-3xl font-display tracking-wide'>Our Socials</h2>
-                <div className='flex items-center gap-3'>
+                <h2 className='text-3xl font-display tracking-wide'>Our Socials</h2>
+                <div className='flex items-center gap-3 justify-center lg:justify-start'>
                   <FaFacebook className='text-accent text-4xl' />
                   <span className='text-lg'>Facebook</span>
                 </div>
@@ -83,9 +82,11 @@ export default function Contact() {
 
             {/* Second Column - Send a Message Form (bottom on small, right on medium+) */}
             <div className='flex flex-col items-center'>
-              <h2 className='text-3xl font-display tracking-wide text-start'>Send a Message</h2>
+              <h2 className='text-3xl font-display tracking-wide pb-5'>Send a Message</h2>
               {/* Contact Form */}
-              <ContactForm />
+              <div className='flex justify-center w-full'>
+                <ContactForm />
+              </div>
             </div>
           </div>
         </div>
