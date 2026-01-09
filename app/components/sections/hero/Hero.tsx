@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { scrollToSection } from '@/components/layout/scrollToSection'
 
-const Hero = () => {
+export default function Hero() {
   // Slant overlay to match Navbar logo
   const angleSlant = 'polygon(0 0, 100% 0, 70% 100%, 0 100%)'
 
@@ -55,5 +55,3 @@ const Hero = () => {
     </section>
   )
 }
-
-export default Hero
