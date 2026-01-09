@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Services = () => {
   return (
-    <>
+    <section id='services'>
       <div className='flex flex-col pt-12 pb-14 px-6 max-w-6xl mx-auto'>
         {/* Header row: title + buttons */}
         <h1 className='text-4xl md:text-5xl font-display text-accent tracking-wide'>
@@ -23,7 +23,7 @@ const Services = () => {
           <ServiceCardCarousel />
         </div>
       </div>
-    </>
+    </section>
   )
 }
 

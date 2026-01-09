@@ -7,6 +7,7 @@ import { YearsOfExperience } from './YearsOfExperience'
 export default function AboutSection() {
   return (
     <section
+      id='about'
       className='w-full bg-cover bg-center bg-no-repeat'
       style={{ backgroundImage: "url('/images/about-bg.png')" }} // background from Figma
     >

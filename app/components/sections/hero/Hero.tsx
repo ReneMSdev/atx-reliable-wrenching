@@ -1,4 +1,6 @@
+'use client'
 import Image from 'next/image'
+import { scrollToSection } from '@/components/layout/scrollToSection'
 
 const Hero = () => {
   // Slant overlay to match Navbar logo
@@ -36,7 +38,10 @@ const Hero = () => {
             </h2>
 
             <div className='flex flex-wrap gap-5 font-sans'>
-              <button className='flex items-center justify-center gap-1 bg-accent text-white px-8 py-3 font-bold text-sm tracking-wide hover:bg-accent-hover transition-all duration-200 cursor-pointer min-w-[130px]'>
+              <button
+                onClick={() => scrollToSection('services')}
+                className='flex items-center justify-center gap-1 bg-accent text-white px-8 py-3 font-bold text-sm tracking-wide hover:bg-accent-hover transition-all duration-200 cursor-pointer min-w-[130px]'
+              >
                 Learn More
               </button>
 

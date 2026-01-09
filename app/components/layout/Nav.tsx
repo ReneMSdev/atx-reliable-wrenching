@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FaPhoneAlt, FaFacebook } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
 import Image from 'next/image'
+import { scrollToSection } from './scrollToSection'
 
 const Navbar = () => {
   // The '40px' in the clip-path determines the "sharpness" of the angle.
@@ -77,15 +78,20 @@ const Navbar = () => {
             <div className='h-0.5 w-full bg-gray-100 my-2.5' />
 
             {/* Bottom Row: Nav Links */}
-            <div className='flex justify-end items-center gap-6 pr-8'>
-              {['About Us', 'Our Services', 'Our Work', 'Contact Us'].map((item) => (
-                <Link
-                  key={item}
-                  href={`#`}
-                  className='text-gray-800 hover:text-accent font-bold text-sm tracking-tight transition-colors'
+            <div className='flex justify-end items-center gap-2 pr-8'>
+              {[
+                { label: 'Our Services', id: 'services' },
+                { label: 'About Us', id: 'about' },
+                { label: 'Our Work', id: 'reviews' },
+                { label: 'Contact Us', id: 'contact' },
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className='text-gray-800 hover:text-accent font-bold text-sm tracking-tight transition-colors cursor-pointer p-2'
                 >
-                  {item}
-                </Link>
+                  {item.label}
+                </button>
               ))}
               <button className='bg-black text-white px-8 py-3 font-bold text-xs tracking-widest hover:bg-accent transition-all cursor-pointer'>
                 Book Now
