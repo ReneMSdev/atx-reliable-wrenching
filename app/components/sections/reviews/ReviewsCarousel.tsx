@@ -82,7 +82,7 @@ export default function ReviewsCarousel() {
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className='flex-[0_0_100%] md:flex-[0_0_50%]'
+                className='flex-[0_0_100%] lg:flex-[0_0_50%]'
               >
                 <div className='flex w-full items-center justify-center px-2'>
                   <ReviewCard
