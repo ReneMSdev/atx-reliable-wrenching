@@ -2,6 +2,7 @@
 import { FaPhoneAlt, FaEnvelope, FaFacebook } from 'react-icons/fa'
 import Image from 'next/image'
 import TitleFlair from 'public/images/TitleFlair.svg'
+import ContactForm from './ContactForm'
 
 export default function Contact() {
   return (
@@ -82,8 +83,9 @@ export default function Contact() {
 
             {/* Second Column - Send a Message Form (bottom on small, right on medium+) */}
             <div className='flex flex-col items-center'>
-              <h2 className='text-3xl font-display tracking-wide'>Send a Message</h2>
-              {/* Form will be added here later */}
+              <h2 className='text-3xl font-display tracking-wide text-start'>Send a Message</h2>
+              {/* Contact Form */}
+              <ContactForm />
             </div>
           </div>
         </div>
