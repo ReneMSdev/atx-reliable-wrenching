@@ -58,9 +58,6 @@ export default function ServiceCard({
 
       {/* Body */}
       <p className='text-sm pb-5'>{description}</p>
-
-      {/* Button */}
-      <ReadMoreBtn onClick={() => {}} />
     </div>
   )
 }
