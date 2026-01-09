@@ -62,7 +62,7 @@ export default function ServicesCarousel() {
     <>
       <div className='w-full max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 overflow-hidden'>
         {/* Navigation buttons above the carousel */}
-        <div className='flex justify-end gap-2 mb-8'>
+        <div className='flex justify-end gap-4 mb-8'>
           <PrevButton
             onClick={onPrevButtonClick}
             disabled={prevBtnDisabled}
