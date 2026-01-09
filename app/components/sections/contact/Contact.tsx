@@ -20,7 +20,7 @@ export default function Contact() {
 
       {/* Content */}
       <div className='relative z-10'>
-        <div className='max-w-6xl mx-auto px-4 py-10'>
+        <div className='max-w-6xl mx-auto px-6 py-10'>
           {/* Contact Us h1 - Top Left */}
           <h1 className='text-4xl md:text-5xl font-display text-accent tracking-wide'>
             Contact Us
@@ -74,7 +74,7 @@ export default function Contact() {
               <div className='flex flex-col gap-4'>
                 <h2 className='text-2xl md:text-3xl font-display tracking-wide'>Our Socials</h2>
                 <div className='flex items-center gap-3'>
-                  <FaFacebook className='text-accent text-xl' />
+                  <FaFacebook className='text-accent text-4xl' />
                   <span className='text-lg'>Facebook</span>
                 </div>
               </div>
