@@ -47,7 +47,7 @@ const reviews = [
 
 export default function ReviewsCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: 'center',
+    align: 'start',
     containScroll: 'trimSnaps',
     dragFree: false,
     loop: false,

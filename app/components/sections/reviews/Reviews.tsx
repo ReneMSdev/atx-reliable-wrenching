@@ -19,7 +19,9 @@ export default function Reviews() {
       </div>
 
       {/* Subtitle */}
-      <p className='text-md text-center mb-10'>See what our customers are saying about us.</p>
+      <p className='text-md text-center mb-6 md:mb-0'>
+        See what our customers are saying about us.
+      </p>
 
       {/* Reviews Carousel */}
       <div className='pb-10'>
