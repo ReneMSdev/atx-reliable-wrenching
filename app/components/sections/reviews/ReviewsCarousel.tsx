@@ -2,9 +2,9 @@
 
 import useEmblaCarousel from 'embla-carousel-react'
 import ReviewCard from './ReviewCard'
-import { usePrevNextButtons } from '../services/embla/ArrowButtons'
-import { PrevButton, NextButton } from '../services/embla/ArrowButtons'
-import { useDotButton, DotButton } from '../services/embla/DotButton'
+import { usePrevNextButtons } from '@/components/ui/embla/ArrowButtons'
+import { PrevButton, NextButton } from '@/components/ui/embla/ArrowButtons'
+import { useDotButton, DotButton } from '@/components/ui/embla/DotButton'
 
 const reviews = [
   {

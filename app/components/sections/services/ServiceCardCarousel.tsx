@@ -3,9 +3,9 @@
 import useEmblaCarousel from 'embla-carousel-react'
 import ServiceCard from './ServiceCard'
 import { FaGasPump, FaTools, FaCar } from 'react-icons/fa'
-import { usePrevNextButtons } from './embla/ArrowButtons'
-import { PrevButton, NextButton } from './embla/ArrowButtons'
-import { useDotButton, DotButton } from './embla/DotButton'
+import { usePrevNextButtons } from '@/components/ui/embla/ArrowButtons'
+import { PrevButton, NextButton } from '@/components/ui/embla/ArrowButtons'
+import { useDotButton, DotButton } from '@/components/ui/embla/DotButton'
 
 const services = [
   {
