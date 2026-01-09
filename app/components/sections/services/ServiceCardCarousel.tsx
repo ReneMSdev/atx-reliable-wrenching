@@ -97,7 +97,7 @@ export default function ServicesCarousel() {
           </div>
 
           {/* Dots */}
-          <div className='flex justify-center mt-4 gap-2'>
+          <div className='flex justify-center mt-6 gap-2'>
             {scrollSnaps.map((scrollSnap, index) => (
               <DotButton
                 key={index}
