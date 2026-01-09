@@ -5,7 +5,7 @@ import ReviewCard from './ReviewCard'
 const reviews = [
   {
     review:
-      'I’ve been bringing my car to ATX Reliable Wrenching for a few years now, and they never disappoint. The team is knowledgeable, honest, and always gets the job done right the first time.',
+      'I’ve been bringing my car to ATX Reliable Wrenching for a few years now, and they never disappoint. The team is knowledgeable, honest, and always gets the job done right the first time. ',
     author: 'Wendy Stevens',
     rating: 5,
   },
