@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { IconType } from 'react-icons'
-import ReadMoreBtn from '@/components/ui/ReadMoreBtn'
 import { JSX } from 'react'
 
 interface ServiceCardProps {
