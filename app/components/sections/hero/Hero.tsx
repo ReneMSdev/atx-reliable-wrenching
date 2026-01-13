@@ -20,15 +20,18 @@ export default function Hero() {
         className='object-cover'
       />
 
-      {/* Angled overlay for text - flush to left, right edge at center */}
+      {/* Mobile overlay - covers entire image on small screens */}
+      <div className='absolute inset-0 bg-black/80 md:hidden' />
+
+      {/* Angled overlay for text - flush to left, right edge at center - hidden on small screens */}
       <div
-        className='absolute top-0 left-0 h-full w-3/5 bg-black/80'
+        className='hidden md:block absolute top-0 left-0 h-full w-3/5 bg-black/80'
         style={{ clipPath: angleSlant }}
       />
 
       {/* Hero Content */}
-      <div className='relative z-10 h-full flex'>
-        <div className='w-1/2 flex flex-col justify-center items-center px-6 text-white'>
+      <div className='relative z-10 h-full flex justify-center md:justify-start'>
+        <div className='w-full md:w-1/2 flex flex-col justify-center items-center px-6 text-white'>
           <div>
             <h1 className='font-display text-4xl lg:text-5xl tracking-wide mb-3'>
               ATX Reliable Wrenching
