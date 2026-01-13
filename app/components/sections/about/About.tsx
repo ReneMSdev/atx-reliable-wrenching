@@ -18,7 +18,7 @@ export default function AboutSection() {
         </div>
 
         {/* Right Column - Text */}
-        <div className='text-left px-3 max-w-2xl mx-auto [@media(min-width:1000px)]:mx-0'>
+        <div className='text-left px-3 max-w-xl mx-auto [@media(min-width:1000px)]:mx-0'>
           <h2 className='text-4xl font-display text-accent tracking-wide'>About Us</h2>
           <Image
             src={TitleFlair}
@@ -27,10 +27,10 @@ export default function AboutSection() {
             height={4}
             className='mb-10'
           />
-          <p className='mb-6'>
+          <p className='mb-6 text-md'>
             {`At ATX Reliable Wrenching, we bring over ${YearsOfExperience()} years of hands-on experience in automotive repair to every vehicle we service. From routine maintenance to complex diagnostics, our team is committed to keeping your car running smoothly and safely. We combine technical expertise with a passion for quality workmanship, ensuring every repair meets the highest standards.`}
           </p>
-          <p className='mb-6'>
+          <p className='mb-6 text-md'>
             {`Located in the heart of Austin, we pride ourselves on providing honest, dependable service to our community. Whether you’re a longtime customer or visiting us for the first time, ATX Reliable Wrenching is here to deliver fast, reliable solutions and get you back on the road with confidence.`}
           </p>
         </div>
