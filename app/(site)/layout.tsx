@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Roboto_Condensed, Squada_One } from 'next/font/google'
 import '@/styles/globals.css'
+import { Bounce, ToastContainer } from 'react-toastify'
 
 const inter = Inter({
   variable: '--font-sans',
@@ -37,6 +38,13 @@ export default function RootLayout({
         className={`${inter.variable} ${robotoCondensed.variable} ${squadaOne.variable} antialiased`}
       >
         {children}
+        <ToastContainer
+          position='top-center'
+          autoClose={3000}
+          pauseOnHover={true}
+          transition={Bounce}
+          closeOnClick={true}
+        />
       </body>
     </html>
   )

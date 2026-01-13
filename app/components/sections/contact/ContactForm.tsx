@@ -1,79 +1,75 @@
 import React, { useState } from 'react'
 import { FaRegPaperPlane } from 'react-icons/fa6'
+import { toast } from 'react-toastify'
+import InputMask from 'react-input-mask'
+
+const initialState = { name: '', phone: '', email: '', message: '' }
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
-  })
+  const [formData, setFormData] = useState(initialState)
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+    setErrors({ ...errors, [e.target.name]: '' })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log(formData)
+  const validate = () => {
+    const newErrors: Record<string, string> = {}
+    Object.entries(formData).forEach(([key, value]) => {
+      if (!value.trim()) newErrors[key] = 'This field is required'
+    })
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
   }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!validate()) return
+
+    try {
+      setLoading(true)
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) throw new Error()
+      toast.success('Message sent successfully')
+    } catch {
+      toast.error('Failed to send message')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const inputClass = 'w-full p-[7px] bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
 
   return (
     <form
       className='w-full max-w-[345px] px-[14px] py-[22px] border-4 border-accent bg-white'
       onSubmit={handleSubmit}
     >
-      <div className='mb-3.5'>
-        <label
-          className='block font-condensed font-semibold tracking-wide text-sm'
-          htmlFor='name'
+      {['name', 'phone', 'email'].map((field) => (
+        <div
+          key={field}
+          className='mb-3.5'
         >
-          Name
-        </label>
-        <input
-          type='text'
-          name='name'
-          id='name'
-          value={formData.name}
-          onChange={handleChange}
-          className='w-full p-[7px] bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
-        />
-      </div>
-
-      <div className='mb-3.5'>
-        <label
-          className='block font-condensed font-semibold tracking-wide text-sm'
-          htmlFor='email'
-        >
-          Phone
-        </label>
-        <input
-          type='tel'
-          name='phone'
-          id='phone'
-          value={formData.phone}
-          onChange={handleChange}
-          className='w-full p-[7px] bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
-        />
-      </div>
-
-      <div className='mb-3.5'>
-        <label
-          className='block font-condensed font-semibold tracking-wide text-sm'
-          htmlFor='email'
-        >
-          Email
-        </label>
-        <input
-          type='email'
-          name='email'
-          id='email'
-          value={formData.email}
-          onChange={handleChange}
-          className='w-full p-[7px] bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
-        />
-      </div>
+          <label className='block font-condensed font-semibold tracking-wide text-sm'>
+            {field.charAt(0).toUpperCase() + field.slice(1)}
+          </label>
+          <input
+            type={field === 'email' ? 'email' : field === 'phone' ? 'tel' : 'text'}
+            name={field}
+            value={formData[field as keyof typeof formData]}
+            onChange={handleChange}
+            className={inputClass}
+          />
+          {errors[field] && <p className='text-red-600 text-sm mt-1'>{errors[field]}</p>}
+        </div>
+      ))}
 
       <div className='mb-3.5'>
         <label
@@ -94,12 +90,13 @@ export default function ContactForm() {
       <div className='flex justify-center'>
         <button
           type='submit'
+          disabled={loading}
           className='flex items-center justify-center py-[11px] px-[43px] bg-accent text-white hover:bg-accent-hover transition-colors cursor-pointer font-semibold text-sm'
         >
           <span className='mr-2'>
             <FaRegPaperPlane className='text-white' />
           </span>
-          Submit
+          {loading ? 'Sending...' : 'Submit'}
         </button>
       </div>
     </form>
