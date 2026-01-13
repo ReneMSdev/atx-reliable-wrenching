@@ -5,6 +5,7 @@ import { FaLocationDot } from 'react-icons/fa6'
 import Image from 'next/image'
 import { scrollToSection } from './scrollToSection'
 import { siteInfo } from '../../../config/siteInfo'
+import BookNowBtn from '@/components/ui/BookNowBtn'
 
 const Navbar = () => {
   // The '40px' in the clip-path determines the "sharpness" of the angle.
@@ -96,9 +97,7 @@ const Navbar = () => {
                   {item.label}
                 </button>
               ))}
-              <button className='bg-black text-white px-8 py-3 font-bold text-xs tracking-widest hover:bg-accent transition-all cursor-pointer'>
-                Book Now
-              </button>
+              <BookNowBtn />
             </div>
           </div>
         </div>

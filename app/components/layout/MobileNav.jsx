@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import Image from 'next/image'
 import { scrollToSection } from './scrollToSection'
+import BookNowBtn from '@/components/ui/BookNowBtn'
 
 export default function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -69,12 +70,11 @@ export default function MobileNav() {
               {item.label}
             </button>
           ))}
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className='bg-black text-white mx-auto px-10 py-3 mt-4 font-bold text-sm tracking-widest hover:bg-gray-800 transition-all cursor-pointer'
-          >
-            Book Now
-          </button>
+          <BookNowBtn
+            bgClass='bg-black'
+            textClass='text-white'
+            className='mx-auto px-10 py-4 mt-4 font-bold text-sm tracking-widest hover:bg-gray-800 transition-all cursor-pointer'
+          />
         </div>
       </div>
 

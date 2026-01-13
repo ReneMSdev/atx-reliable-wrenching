@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { scrollToSection } from '@/components/layout/scrollToSection'
+import BookNowBtn from '@/components/ui/BookNowBtn'
 
 export default function Hero() {
   // Slant overlay with fixed angle - right edge at center, flush to left
@@ -50,9 +51,11 @@ export default function Hero() {
                 Learn More
               </button>
 
-              <button className='flex items-center justify-center gap-1 bg-white text-black px-8 py-3 font-bold text-sm tracking-wide hover:bg-accent hover:text-white transition-all duration-200 cursor-pointer min-w-[130px]'>
-                Book Now
-              </button>
+              <BookNowBtn
+                bgClass='bg-white'
+                textClass='text-black'
+                className='min-w-[130px]'
+              />
             </div>
           </div>
         </div>
