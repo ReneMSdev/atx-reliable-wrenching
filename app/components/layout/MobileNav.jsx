@@ -1,8 +1,6 @@
 'use client'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { IoClose } from 'react-icons/io5'
-import { HiOutlineBars3 } from 'react-icons/hi2'
 import Image from 'next/image'
 import { scrollToSection } from './scrollToSection'
 
@@ -28,10 +26,21 @@ export default function MobileNav() {
     <>
       {/* Fixed Menu Bar */}
       <nav className='fixed top-0 left-0 w-full z-50'>
-        <div className='flex h-20 w-full'>
-          {/* Black Section - Left Side with Diagonal Edge */}
+        <div className='relative flex h-20 w-full'>
+          {/* White Section - Right Side with Hamburger (behind black section) */}
+          <div className='absolute inset-0 bg-white flex items-center justify-end pr-4 z-10'>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className='text-black transition-opacity p-2 cursor-pointer'
+              aria-label='Toggle menu'
+            >
+              {isMenuOpen ? <FaTimes className='text-2xl' /> : <FaBars className='text-2xl' />}
+            </button>
+          </div>
+
+          {/* Black Section - Left Side with Diagonal Edge (on top) */}
           <div
-            className='bg-black flex items-center pl-4 pr-12 shrink-0'
+            className='relative bg-black flex items-center pl-4 pr-12 w-1/2 z-20'
             style={{ clipPath: angleSlantNavbar }}
           >
             <Image
@@ -41,17 +50,6 @@ export default function MobileNav() {
               width={111}
               className='object-contain'
             />
-          </div>
-
-          {/* White Section - Right Side with Hamburger */}
-          <div className='grow bg-white flex items-center justify-end pr-4'>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className='text-black transition-opacity p-2 cursor-pointer'
-              aria-label='Toggle menu'
-            >
-              {isMenuOpen ? <FaTimes className='text-2xl' /> : <FaBars className='text-2xl' />}
-            </button>
           </div>
         </div>
       </nav>
