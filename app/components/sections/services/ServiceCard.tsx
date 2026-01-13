@@ -18,7 +18,7 @@ export default function ServiceCard({
   description,
 }: ServiceCardProps): JSX.Element {
   return (
-    <div className='bg-surface p-5 w-full max-w-[280px] border-b-4 border-gray-300'>
+    <div className='bg-surface p-[18px] w-full max-w-[252px] border-b-4 border-gray-300'>
       {/* Image wrapper */}
       <div className='relative w-full aspect-3/2'>
         <Image
@@ -32,16 +32,16 @@ export default function ServiceCard({
         {/* Flair */}
         <div className='absolute bottom-0 left-0 flex items-end'>
           {/* Square */}
-          <div className='bg-accent w-14 h-14 md:w-16 md:h-16 flex items-center justify-center translate-y-[19px]'>
-            <Icon className='text-white text-2xl md:text-3xl' />
+          <div className='bg-accent w-14 h-14 flex items-center justify-center translate-y-[17px]'>
+            <Icon className='text-white text-2xl' />
           </div>
 
           {/* Extension */}
           <svg
-            width='120'
-            height='20'
+            width='108'
+            height='18'
             viewBox='0 0 120 20'
-            className='block translate-y-[19px]'
+            className='block translate-y-[17px]'
             aria-hidden
           >
             <path
@@ -53,10 +53,10 @@ export default function ServiceCard({
       </div>
 
       {/* Title */}
-      <h3 className='font-display text-2xl md:text-3xl pt-10'>{title}</h3>
+      <h3 className='font-display text-2xl pt-9'>{title}</h3>
 
       {/* Body */}
-      <p className='text-sm pb-5'>{description}</p>
+      <p className='text-sm pb-[18px]'>{description}</p>
     </div>
   )
 }

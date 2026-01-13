@@ -58,7 +58,7 @@ export const PrevButton = ({ onClick, disabled }: { onClick: () => void; disable
     <button
       onClick={onClick}
       disabled={disabled}
-      className='w-10 h-10 bg-accent text-white flex items-center justify-center shadow-sm disabled:opacity-70 cursor-pointer'
+      className='w-8 h-8 bg-accent text-white flex items-center justify-center shadow-sm disabled:opacity-70 cursor-pointer'
     >
       <FaArrowLeft />
     </button>
@@ -70,7 +70,7 @@ export const NextButton = ({ onClick, disabled }: { onClick: () => void; disable
     <button
       onClick={onClick}
       disabled={disabled}
-      className='w-10 h-10 bg-black text-white flex items-center justify-center shadow-sm disabled:opacity-70 cursor-pointer'
+      className='w-8 h-8 bg-black text-white flex items-center justify-center shadow-sm disabled:opacity-70 cursor-pointer'
     >
       <FaArrowRight />
     </button>
