@@ -7,7 +7,6 @@ import { scrollToSection } from './scrollToSection'
 export default function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  // Same diagonal edge as Nav
   const angleSlantNavbar = 'polygon(0 0, 100% 0, calc(100% - 46px) 100%, 0% 100%)'
 
   const menuItems = [
@@ -25,7 +24,7 @@ export default function MobileNav() {
   return (
     <>
       {/* Fixed Menu Bar */}
-      <nav className='fixed top-0 left-0 w-full z-50'>
+      <nav className='fixed top-0 left-0 w-full z-50 shadow-sm'>
         <div className='relative flex h-20 w-full'>
           {/* White Section - Right Side with Hamburger (behind black section) */}
           <div className='absolute inset-0 bg-white flex items-center justify-end pr-4 z-10'>
