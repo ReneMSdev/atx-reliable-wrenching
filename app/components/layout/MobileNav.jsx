@@ -23,7 +23,7 @@ export default function MobileNav() {
 
   return (
     <>
-      {/* Fixed Menu Bar */}
+      {/* Menu Bar */}
       <nav className='fixed top-0 left-0 w-full z-50 shadow-sm'>
         <div className='relative flex h-20 w-full'>
           {/* White Section - Right Side with Hamburger (behind black section) */}
@@ -55,7 +55,7 @@ export default function MobileNav() {
 
       {/* Dropdown Menu */}
       <div
-        className={`fixed top-20 left-0 w-full bg-accent z-40 transition-all duration-500 ease-in-out overflow-hidden ${
+        className={`fixed top-20 left-0 w-full bg-accent z-40 transition-all duration-500 ease-in-out shadow-sm overflow-hidden ${
           isMenuOpen ? 'max-h-screen' : 'max-h-0'
         }`}
       >
@@ -64,14 +64,14 @@ export default function MobileNav() {
             <button
               key={item.id}
               onClick={() => handleMenuClick(item.id)}
-              className='text-white font-bold text-lg px-6 py-4 transition-colors text-center cursor-pointer'
+              className='text-white font-bold text-md px-6 py-3 transition-colors text-center cursor-pointer'
             >
               {item.label}
             </button>
           ))}
           <button
             onClick={() => setIsMenuOpen(false)}
-            className='bg-black text-white mx-auto px-12 py-4 mt-4 font-bold text-sm tracking-widest hover:bg-gray-800 transition-all cursor-pointer'
+            className='bg-black text-white mx-auto px-10 py-3 mt-4 font-bold text-sm tracking-widest hover:bg-gray-800 transition-all cursor-pointer'
           >
             Book Now
           </button>
