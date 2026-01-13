@@ -1,7 +1,86 @@
+'use client'
+import { useState } from 'react'
+import { FaBars, FaTimes } from 'react-icons/fa'
+import Image from 'next/image'
+import { scrollToSection } from './scrollToSection'
+
 export default function MobileNav() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  // Same diagonal edge as Nav
+  const angleSlantNavbar = 'polygon(0 0, 100% 0, calc(100% - 46px) 100%, 0% 100%)'
+
+  const menuItems = [
+    { label: 'Our Services', id: 'services' },
+    { label: 'About Us', id: 'about' },
+    { label: 'Our Work', id: 'reviews' },
+    { label: 'Contact Us', id: 'contact' },
+  ]
+
+  const handleMenuClick = (id) => {
+    scrollToSection(id)
+    setIsMenuOpen(false)
+  }
+
   return (
-    <div className='w-full h-full bg-red-500'>
-      <h1>Mobile Nav</h1>
-    </div>
+    <>
+      {/* Fixed Menu Bar */}
+      <nav className='fixed top-0 left-0 w-full z-50'>
+        <div className='flex h-20 w-full'>
+          {/* Black Section - Left Side with Diagonal Edge */}
+          <div
+            className='bg-black flex items-center pl-4 pr-12 shrink-0'
+            style={{ clipPath: angleSlantNavbar }}
+          >
+            <Image
+              src='/images/LogoSmall.png'
+              alt='Logo'
+              height={60}
+              width={111}
+              className='object-contain'
+            />
+          </div>
+
+          {/* White Section - Right Side with Hamburger */}
+          <div className='grow bg-white flex items-center justify-end pr-4'>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className='text-black hover:opacity-70 transition-opacity p-2'
+              aria-label='Toggle menu'
+            >
+              {isMenuOpen ? <FaTimes className='text-2xl' /> : <FaBars className='text-2xl' />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Dropdown Menu */}
+      <div
+        className={`fixed top-20 left-0 w-full bg-accent z-40 transition-all duration-300 ease-in-out overflow-hidden ${
+          isMenuOpen ? 'max-h-screen' : 'max-h-0'
+        }`}
+      >
+        <div className='flex flex-col py-6'>
+          {menuItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleMenuClick(item.id)}
+              className='text-white font-bold text-lg px-6 py-4 hover:bg-black/20 transition-colors text-left'
+            >
+              {item.label}
+            </button>
+          ))}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className='bg-black text-white px-6 py-4 mx-6 mt-4 font-bold text-sm tracking-widest hover:bg-gray-800 transition-all'
+          >
+            Book Now
+          </button>
+        </div>
+      </div>
+
+      {/* Spacer to prevent content from going under fixed nav */}
+      <div className='h-20' />
+    </>
   )
 }
