@@ -18,7 +18,7 @@ export default function AboutSection() {
         </div>
 
         {/* Right Column - Text */}
-        <div className='text-left px-3 max-w-xl mx-auto [@media(min-width:1000px)]:mx-0'>
+        <div className='text-left px-3 max-w-md md:max-w-xl mx-auto [@media(min-width:1000px)]:mx-0'>
           <h2 className='text-4xl font-display text-accent tracking-wide'>About Us</h2>
           <Image
             src={TitleFlair}
