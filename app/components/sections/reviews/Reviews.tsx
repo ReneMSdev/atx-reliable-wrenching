@@ -4,7 +4,7 @@ import ReviewsCarousel from './ReviewsCarousel'
 
 export default function Reviews() {
   return (
-    <section id='reviews'>
+    <section id='reviews' className='scroll-mt-20 min-[900px]:scroll-mt-0'>
       <div className='flex flex-col pt-12 pb-6 px-6 max-w-6xl mx-auto'>
         {/* Title */}
         <h1 className='text-4xl md:text-5xl font-display text-accent tracking-wide'>

@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section
       id='contact'
-      className='w-full relative overflow-hidden'
+      className='w-full relative overflow-hidden scroll-mt-20 min-[900px]:scroll-mt-0'
     >
       {/* Background with 180 degree flip */}
       <div

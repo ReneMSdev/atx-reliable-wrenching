@@ -8,7 +8,7 @@ export default function AboutSection() {
   return (
     <section
       id='about'
-      className='w-full bg-cover bg-center bg-no-repeat'
+      className='w-full bg-cover bg-center bg-no-repeat scroll-mt-20 min-[900px]:scroll-mt-0'
       style={{ backgroundImage: "url('/images/about-bg.png')" }} // background from Figma
     >
       <div className='max-w-6xl mx-auto px-4 py-20 grid gap-10 items-center grid-cols-1 [@media(min-width:1000px)]:grid-cols-2'>
