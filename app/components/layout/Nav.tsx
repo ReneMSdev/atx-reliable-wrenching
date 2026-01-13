@@ -4,6 +4,7 @@ import { FaPhoneAlt, FaFacebook } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
 import Image from 'next/image'
 import { scrollToSection } from './scrollToSection'
+import { siteInfo } from '../../../config/siteInfo'
 
 const Navbar = () => {
   // The '40px' in the clip-path determines the "sharpness" of the angle.
@@ -28,14 +29,16 @@ const Navbar = () => {
           <div className='grow flex justify-end items-center px-8'>
             <div className='flex gap-4 items-center pr-8'>
               <span className='hidden lg:inline font-semibold'>
-                Monday - Friday <span className='font-bold'>8:00 AM - 5:00 PM</span> | Saturday{' '}
-                <span className='font-bold'>9:00 AM - 1:00 PM</span>
+                Monday - Friday <span className='font-bold'>{siteInfo.hoursWeekDays}</span> |
+                Saturday <span className='font-bold'>{siteInfo.hoursSaturday}</span>
               </span>
             </div>
             <div className='flex gap-4 items-center'>
               <Link
-                href='#'
-                className='hover:scale-110 transition-transform'
+                href={siteInfo.links.facebook}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:scale-110 transition-transform pl-2 py-4'
               >
                 <FaFacebook className='text-white text-xl' />
               </Link>
@@ -66,7 +69,7 @@ const Navbar = () => {
             <div className='flex justify-end gap-8 items-center pr-8'>
               <div className='flex items-center gap-2'>
                 <FaPhoneAlt className='text-accent text-lg' />
-                <span className='text-md font-bold'>(512) 123 - 7456</span>
+                <span className='text-md font-bold'>{siteInfo.phone}</span>
               </div>
               <div className='hidden sm:flex items-center gap-2 text-gray-500 text-sm'>
                 <FaLocationDot className='text-accent text-lg' />

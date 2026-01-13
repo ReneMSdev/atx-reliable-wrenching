@@ -3,6 +3,8 @@ import { FaPhoneAlt, FaEnvelope, FaFacebook } from 'react-icons/fa'
 import Image from 'next/image'
 import TitleFlair from 'public/images/TitleFlair.svg'
 import ContactForm from './ContactForm'
+import { siteInfo } from '../../../../config/siteInfo'
+import Link from 'next/link'
 
 export default function Contact() {
   return (
@@ -42,10 +44,10 @@ export default function Contact() {
                 <h2 className='text-3xl font-display tracking-wide'>Available Hours</h2>
                 <div className='flex flex-col gap-1 items-center'>
                   <span className='text-lg font-bold'>
-                    Monday - Friday <span className='font-normal'>8:00 AM - 5:00 PM</span>
+                    Monday - Friday <span className='font-normal'>{siteInfo.hoursWeekDays}</span>
                   </span>
                   <span className='text-lg font-bold'>
-                    Saturday <span className='font-normal'>9:00 AM - 1:00 PM</span>
+                    Saturday <span className='font-normal'>{siteInfo.hoursSaturday}</span>
                   </span>
                 </div>
               </div>
@@ -55,7 +57,7 @@ export default function Contact() {
                 <h2 className='text-3xl font-display tracking-wide'>Call Us</h2>
                 <div className='flex items-center gap-3 justify-center'>
                   <FaPhoneAlt className='text-accent text-xl' />
-                  <span className='text-lg font-semibold'>(512) 123 - 7456</span>
+                  <span className='text-lg font-semibold'>{siteInfo.phone}</span>
                 </div>
               </div>
 
@@ -64,7 +66,7 @@ export default function Contact() {
                 <h2 className='text-3xl font-display tracking-wide'>Send Us an Email</h2>
                 <div className='flex items-center gap-3 justify-center'>
                   <FaEnvelope className='text-accent text-xl' />
-                  <span className='text-lg'>info@atxreliablewrenching.com</span>
+                  <span className='text-lg'>{siteInfo.email}</span>
                 </div>
               </div>
 
@@ -72,8 +74,15 @@ export default function Contact() {
               <div className='flex flex-col gap-4'>
                 <h2 className='text-3xl font-display tracking-wide'>Our Socials</h2>
                 <div className='flex items-center gap-3 justify-center'>
-                  <FaFacebook className='text-accent text-4xl' />
-                  <span className='text-lg'>Facebook</span>
+                  <Link
+                    href={siteInfo.links.facebook}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='flex items-center gap-3'
+                  >
+                    <FaFacebook className='text-accent text-4xl' />
+                    <span className='text-lg'>Facebook</span>
+                  </Link>
                 </div>
               </div>
             </div>
