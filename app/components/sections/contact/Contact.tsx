@@ -36,11 +36,11 @@ export default function Contact() {
           {/* Grid for two columns */}
           <div className='grid gap-10 grid-cols-1 [@media(min-width:1000px)]:grid-cols-2'>
             {/* First Column - Contact Info (top on small, left on medium+) */}
-            <div className='flex flex-col gap-8 text-center lg:text-left'>
+            <div className='flex flex-col gap-8 text-center'>
               {/* Available Hours */}
               <div className='flex flex-col gap-4'>
                 <h2 className='text-3xl font-display tracking-wide'>Available Hours</h2>
-                <div className='flex flex-col gap-1 items-center lg:items-start'>
+                <div className='flex flex-col gap-1 items-center'>
                   <span className='text-lg font-bold'>
                     Monday - Friday <span className='font-normal'>8:00 AM - 5:00 PM</span>
                   </span>
@@ -53,7 +53,7 @@ export default function Contact() {
               {/* Call Us */}
               <div className='flex flex-col gap-4'>
                 <h2 className='text-3xl font-display tracking-wide'>Call Us</h2>
-                <div className='flex items-center gap-3 justify-center lg:justify-start'>
+                <div className='flex items-center gap-3 justify-center'>
                   <FaPhoneAlt className='text-accent text-xl' />
                   <span className='text-lg font-semibold'>(512) 123 - 7456</span>
                 </div>
@@ -62,7 +62,7 @@ export default function Contact() {
               {/* Send Us an Email */}
               <div className='flex flex-col gap-4'>
                 <h2 className='text-3xl font-display tracking-wide'>Send Us an Email</h2>
-                <div className='flex items-center gap-3 justify-center lg:justify-start'>
+                <div className='flex items-center gap-3 justify-center'>
                   <FaEnvelope className='text-accent text-xl' />
                   <span className='text-lg'>info@atxreliablewrenching.com</span>
                 </div>
@@ -71,7 +71,7 @@ export default function Contact() {
               {/* Our Socials */}
               <div className='flex flex-col gap-4'>
                 <h2 className='text-3xl font-display tracking-wide'>Our Socials</h2>
-                <div className='flex items-center gap-3 justify-center lg:justify-start'>
+                <div className='flex items-center gap-3 justify-center'>
                   <FaFacebook className='text-accent text-4xl' />
                   <span className='text-lg'>Facebook</span>
                 </div>
