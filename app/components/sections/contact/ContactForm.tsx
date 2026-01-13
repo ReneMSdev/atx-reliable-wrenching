@@ -21,12 +21,12 @@ export default function ContactForm() {
 
   return (
     <form
-      className='w-full max-w-sm px-4 py-6 border-4 border-accent bg-white'
+      className='w-full max-w-[345px] px-[14px] py-[22px] border-4 border-accent bg-white'
       onSubmit={handleSubmit}
     >
-      <div className='mb-4'>
+      <div className='mb-3.5'>
         <label
-          className='block font-condensed font-semibold tracking-wide text-md'
+          className='block font-condensed font-semibold tracking-wide text-sm'
           htmlFor='name'
         >
           Name
@@ -37,13 +37,13 @@ export default function ContactForm() {
           id='name'
           value={formData.name}
           onChange={handleChange}
-          className='w-full p-2 bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
+          className='w-full p-[7px] bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
         />
       </div>
 
-      <div className='mb-4'>
+      <div className='mb-3.5'>
         <label
-          className='block font-condensed font-semibold tracking-wide text-md'
+          className='block font-condensed font-semibold tracking-wide text-sm'
           htmlFor='email'
         >
           Phone
@@ -54,13 +54,13 @@ export default function ContactForm() {
           id='phone'
           value={formData.phone}
           onChange={handleChange}
-          className='w-full p-2 bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
+          className='w-full p-[7px] bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
         />
       </div>
 
-      <div className='mb-4'>
+      <div className='mb-3.5'>
         <label
-          className='block font-condensed font-semibold tracking-wide text-md'
+          className='block font-condensed font-semibold tracking-wide text-sm'
           htmlFor='email'
         >
           Email
@@ -71,13 +71,13 @@ export default function ContactForm() {
           id='email'
           value={formData.email}
           onChange={handleChange}
-          className='w-full p-2 bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
+          className='w-full p-[7px] bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
         />
       </div>
 
-      <div className='mb-4'>
+      <div className='mb-3.5'>
         <label
-          className='block font-condensed font-semibold tracking-wide text-md'
+          className='block font-condensed font-semibold tracking-wide text-sm'
           htmlFor='message'
         >
           Message
@@ -88,13 +88,13 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className='w-full p-2 bg-surface focus:outline-none focus:ring-2 focus:ring-accent'
+          className='w-full p-[7px] bg-surface focus:outline-none focus:ring-2 focus:ring-accent min-h-[100px]'
         />
       </div>
       <div className='flex justify-center'>
         <button
           type='submit'
-          className='flex items-center justify-center py-3 px-12 bg-accent text-white hover:bg-accent-hover transition-colors cursor-pointer font-semibold text-md'
+          className='flex items-center justify-center py-[11px] px-[43px] bg-accent text-white hover:bg-accent-hover transition-colors cursor-pointer font-semibold text-sm'
         >
           <span className='mr-2'>
             <FaRegPaperPlane className='text-white' />
