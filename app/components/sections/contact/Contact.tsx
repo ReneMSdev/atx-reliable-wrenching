@@ -23,14 +23,12 @@ export default function Contact() {
       <div className='relative z-10'>
         <div className='max-w-6xl mx-auto px-6 py-10'>
           {/* Contact Us h1 - Top Left */}
-          <h1 className='text-4xl lg:text-5xl font-display text-accent tracking-wide'>
-            Contact Us
-          </h1>
+          <h1 className='text-4xl font-display text-accent tracking-wide'>Contact Us</h1>
           <div className='flex justify-start mb-10'>
             <Image
               src={TitleFlair}
               alt='Services Title Flair'
-              width={120}
+              width={100}
               height={4}
             />
           </div>

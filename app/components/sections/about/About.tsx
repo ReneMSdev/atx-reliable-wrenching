@@ -19,11 +19,11 @@ export default function AboutSection() {
 
         {/* Right Column - Text */}
         <div className='text-left px-3 max-w-2xl mx-auto [@media(min-width:1000px)]:mx-0'>
-          <h2 className='text-4xl md:text-5xl font-display text-accent tracking-wide'>About Us</h2>
+          <h2 className='text-4xl font-display text-accent tracking-wide'>About Us</h2>
           <Image
             src={TitleFlair}
             alt='Services Title Flair'
-            width={120}
+            width={100}
             height={4}
             className='mb-10'
           />
