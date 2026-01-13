@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { IoClose } from 'react-icons/io5'
+import { HiOutlineBars3 } from 'react-icons/hi2'
 import Image from 'next/image'
 import { scrollToSection } from './scrollToSection'
 
@@ -45,7 +47,7 @@ export default function MobileNav() {
           <div className='grow bg-white flex items-center justify-end pr-4'>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className='text-black hover:opacity-70 transition-opacity p-2'
+              className='text-black transition-opacity p-2 cursor-pointer'
               aria-label='Toggle menu'
             >
               {isMenuOpen ? <FaTimes className='text-2xl' /> : <FaBars className='text-2xl' />}
@@ -56,7 +58,7 @@ export default function MobileNav() {
 
       {/* Dropdown Menu */}
       <div
-        className={`fixed top-20 left-0 w-full bg-accent z-40 transition-all duration-300 ease-in-out overflow-hidden ${
+        className={`fixed top-20 left-0 w-full bg-accent z-40 transition-all duration-500 ease-in-out overflow-hidden ${
           isMenuOpen ? 'max-h-screen' : 'max-h-0'
         }`}
       >
@@ -65,14 +67,14 @@ export default function MobileNav() {
             <button
               key={item.id}
               onClick={() => handleMenuClick(item.id)}
-              className='text-white font-bold text-lg px-6 py-4 hover:bg-black/20 transition-colors text-left'
+              className='text-white font-bold text-lg px-6 py-4 transition-colors text-center cursor-pointer'
             >
               {item.label}
             </button>
           ))}
           <button
             onClick={() => setIsMenuOpen(false)}
-            className='bg-black text-white px-6 py-4 mx-6 mt-4 font-bold text-sm tracking-widest hover:bg-gray-800 transition-all'
+            className='bg-black text-white mx-auto px-12 py-4 mt-4 font-bold text-sm tracking-widest hover:bg-gray-800 transition-all cursor-pointer'
           >
             Book Now
           </button>
