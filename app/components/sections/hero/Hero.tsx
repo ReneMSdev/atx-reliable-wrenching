@@ -14,7 +14,7 @@ export default function Hero() {
     <section className='-mt-[2px] relative w-full h-[calc(100vh-140px)] overflow-hidden'>
       {/* Background Image */}
       <Image
-        src='https://picsum.photos/1200/800'
+        src='/images/enging.jpg'
         alt='Hero Background'
         fill
         priority
