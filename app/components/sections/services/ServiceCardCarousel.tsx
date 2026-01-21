@@ -40,13 +40,13 @@ export default function ServicesCarousel() {
           className='overflow-hidden'
           ref={emblaRef}
         >
-          <div className='flex px-3'>
+          <div className='flex px-3 items-stretch'>
             {services.map((service, index) => (
               <div
                 key={index}
-                className='flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.3333%]'
+                className='flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.3333%] h-full'
               >
-                <div className='flex w-full items-center justify-center'>
+                <div className='flex w-full items-stretch justify-center h-full'>
                   <ServiceCard
                     image={service.image}
                     title={service.title}
