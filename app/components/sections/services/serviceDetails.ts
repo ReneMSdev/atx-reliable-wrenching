@@ -37,4 +37,22 @@ export const services = [
     description: `Everything from oil changes and tire rotations to 100k-mile services and timing belts. We handle it all!`,
     Icon: FaCar,
   },
+  {
+    image: 'https://picsum.photos/600/450',
+    title: 'Hybrid System Repair',
+    description: `Anything from inverters to just a faulty plug, we can get your vehicle diagnosed and repaired in no time!`,
+    Icon: FaCar,
+  },
+  {
+    image: 'https://picsum.photos/600/450',
+    title: 'Diesel Repair',
+    description: `Expert diesel repair shouldn't cost an arm and a leg. Get specialized service at competitive rates and get back on the road sooner.`,
+    Icon: FaCar,
+  },
+  {
+    image: 'https://picsum.photos/600/450',
+    title: 'Minor Body Work',
+    description: `Broken headlights or bumbers? No issue at all. Reach out and we can get you a quote.`,
+    Icon: FaCar,
+  },
 ]
