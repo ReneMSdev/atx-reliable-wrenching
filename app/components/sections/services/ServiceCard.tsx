@@ -18,7 +18,7 @@ export default function ServiceCard({
   description,
 }: ServiceCardProps): JSX.Element {
   return (
-    <div className='bg-surface p-[18px] w-full max-w-[252px] border-b-4 border-gray-300'>
+    <div className='bg-surface p-[18px] w-full max-w-[280px] border-b-4 border-gray-300'>
       {/* Image wrapper */}
       <div className='relative w-full aspect-3/2'>
         <Image

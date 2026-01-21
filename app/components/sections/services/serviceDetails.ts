@@ -1,0 +1,40 @@
+import { FaGasPump, FaTools, FaCar } from 'react-icons/fa'
+
+export const services = [
+  {
+    image: 'https://picsum.photos/600/450',
+    title: 'Check Engine Light',
+    description: `Check engine light on? Contact us and we'll come out to diagnose and repair the issue to get you back on the road.`,
+    Icon: FaGasPump,
+  },
+  {
+    image: 'https://picsum.photos/600/450',
+    title: 'Brake Repair',
+    description: `Tired of the squeaky or shaky brakes? We have some of the most competitive brake prices in Austin!`,
+    Icon: FaTools,
+  },
+  {
+    image: 'https://picsum.photos/600/450',
+    title: 'Coolant Leak Repair',
+    description: `Engine overheating? Do you see any fluid leaking? All it takes is booking an appointment and we'll get you back rolling!`,
+    Icon: FaCar,
+  },
+  {
+    image: 'https://picsum.photos/600/450',
+    title: 'Suspension Diagnostics',
+    description: `Have you noticed noises over bumps, shaking at high speeds, or squeaking when you turn? Give us a call and we'll get it fixed!`,
+    Icon: FaCar,
+  },
+  {
+    image: 'https://picsum.photos/600/450',
+    title: 'Electrical Repairs',
+    description: `Pesky rodents chewing on your wires or experiencing weird electrical mishaps? Schedule an appointment and we'll have a technician out to you ASAP.`,
+    Icon: FaCar,
+  },
+  {
+    image: 'https://picsum.photos/600/450',
+    title: 'General Maintenance',
+    description: `Everything from oil changes and tire rotations to 100k-mile services and timing belts. We handle it all!`,
+    Icon: FaCar,
+  },
+]

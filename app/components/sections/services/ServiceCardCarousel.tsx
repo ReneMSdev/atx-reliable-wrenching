@@ -2,48 +2,10 @@
 
 import useEmblaCarousel from 'embla-carousel-react'
 import ServiceCard from './ServiceCard'
-import { FaGasPump, FaTools, FaCar } from 'react-icons/fa'
 import { usePrevNextButtons } from '@/components/ui/embla/ArrowButtons'
 import { PrevButton, NextButton } from '@/components/ui/embla/ArrowButtons'
 import { useDotButton, DotButton } from '@/components/ui/embla/DotButton'
-
-const services = [
-  {
-    image: 'https://picsum.photos/600/450',
-    title: 'Oil Change',
-    description:
-      'We specialize in providing cusome paint services for all types of vehicles. Our team of professionals is dedicated to delivering exceptional results.',
-    Icon: FaGasPump,
-  },
-  {
-    image: 'https://picsum.photos/600/450',
-    title: 'Car Repair',
-    description:
-      'We specialize in providing cusome paint services for all types of vehicles. Our team of professionals is dedicated to delivering exceptional results.',
-    Icon: FaTools,
-  },
-  {
-    image: 'https://picsum.photos/600/450',
-    title: 'Vehicle Inspection',
-    description:
-      'We specialize in providing cusome paint services for all types of vehicles. Our team of professionals is dedicated to delivering exceptional results.',
-    Icon: FaCar,
-  },
-  {
-    image: 'https://picsum.photos/600/450',
-    title: 'Vehicle Inspection',
-    description:
-      'We specialize in providing cusome paint services for all types of vehicles. Our team of professionals is dedicated to delivering exceptional results.',
-    Icon: FaCar,
-  },
-  {
-    image: 'https://picsum.photos/600/450',
-    title: 'Vehicle Inspection',
-    description:
-      'We specialize in providing cusome paint services for all types of vehicles. Our team of professionals is dedicated to delivering exceptional results.',
-    Icon: FaCar,
-  },
-]
+import { services } from './serviceDetails'
 
 export default function ServicesCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
