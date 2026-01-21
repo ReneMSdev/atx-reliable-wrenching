@@ -22,11 +22,11 @@ export default function Hero() {
       />
 
       {/* Mobile overlay - covers entire image on small screens */}
-      <div className='absolute inset-0 bg-black/80 md:hidden' />
+      <div className='absolute inset-0 bg-black/70 md:hidden' />
 
       {/* Angled overlay for text - flush to left, right edge at center - hidden on small screens */}
       <div
-        className='hidden md:block absolute top-0 left-0 h-full w-3/5 bg-black/80'
+        className='hidden md:block absolute top-0 left-0 h-full w-3/5 bg-black/70'
         style={{ clipPath: angleSlant }}
       />
 
