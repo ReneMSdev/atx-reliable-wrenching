@@ -72,6 +72,8 @@ export default function ContactForm() {
 
       if (!res.ok) throw new Error()
       toast.success('Message sent successfully')
+      setFormData(initialState)
+      setErrors({})
     } catch {
       toast.error('Failed to send message')
     } finally {
