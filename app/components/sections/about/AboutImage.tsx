@@ -28,7 +28,7 @@ export const AboutImage = () => {
       </svg>
       {/* Main image */}
       <Image
-        src='https://picsum.photos/500/500'
+        src='/images/car.jpg'
         alt='About Image'
         fill
         className='object-cover'
