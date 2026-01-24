@@ -11,7 +11,7 @@ const Services = () => {
     >
       <div className='flex flex-col pt-12 pb-14 px-6 max-w-6xl mx-auto'>
         {/* Header row: title + buttons */}
-        <h1 className='text-4xl font-display text-accent tracking-wide'>Our Services</h1>
+        <h2 className='text-4xl font-display text-accent tracking-wide'>Our Services</h2>
         <Image
           src={TitleFlair}
           alt='Services Title Flair'

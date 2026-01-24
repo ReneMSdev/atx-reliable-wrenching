@@ -24,8 +24,8 @@ export default function Contact() {
       {/* Content */}
       <div className='relative z-10'>
         <div className='max-w-6xl mx-auto px-6 py-10'>
-          {/* Contact Us h1 - Top Left */}
-          <h1 className='text-4xl font-display text-accent tracking-wide'>Contact Us</h1>
+          {/* Contact Us h2 - Top Left */}
+          <h2 className='text-4xl font-display text-accent tracking-wide'>Contact Us</h2>
           <div className='flex justify-start mb-10'>
             <Image
               src={TitleFlair}

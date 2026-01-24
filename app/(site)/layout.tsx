@@ -23,8 +23,9 @@ const squadaOne = Squada_One({
 })
 
 export const metadata: Metadata = {
-  title: 'ATX Reliable Wrenching',
-  description: 'Providing mobile mechanic services to the Austin area.',
+  title: 'Mobile Mechanic in Austin - ATX Reliable Wrenching',
+  description:
+    'Expert mobile mechanic in Austin offering brake repair, coolant leak repair, suspension diagnostics, and more. Fast, reliable, and at your location!',
 }
 
 export default function RootLayout({
