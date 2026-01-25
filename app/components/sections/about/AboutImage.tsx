@@ -3,7 +3,7 @@ import { YearsOfExperience } from './YearsOfExperience'
 
 export const AboutImage = () => {
   return (
-    <div className='relative w-[70vw] max-w-[252px] md:max-w-[324px] aspect-square mb-20'>
+    <div className='relative w-[324px] aspect-square mb-20'>
       {/* Left black bar */}
       <svg
         viewBox='0 0 12 100'
@@ -28,39 +28,22 @@ export const AboutImage = () => {
       </svg>
       {/* Main image */}
       <Image
-        src='/images/car.jpg'
+        src='/images/about.jpg'
         alt='About Image'
         fill
         className='object-cover'
       />
 
-      {/* Overlapping smaller image */}
-      <div
-        className='
-          absolute bottom-0
-          right-[clamp(-54px,-7.2vw,-27px)]
-          w-[clamp(99px,22.5vw,135px)]
-          aspect-square
-          shadow-lg
-        '
-      >
-        <Image
-          src='https://picsum.photos/300/300'
-          alt='Secondary About Image'
-          fill
-          className='object-cover'
-        />
-      </div>
       {/* Bottom rectangles */}
-      <div className='absolute bottom-[-72px] left-[-22px] flex'>
+      <div className='absolute bottom-[-72px] left-[-22px] flex w-[324px]'>
         {/* Number rectangle */}
-        <div className='bg-accent-dark text-white text-base font-bold h-[72px] flex items-center justify-center px-[14px]'>
-          <span className='text-3xl md:text-4xl'>{YearsOfExperience()}+</span>
+        <div className='bg-accent-dark text-white text-base font-bold h-[72px] flex items-center justify-center px-[14px] shrink-0'>
+          <span className='text-4xl'>{YearsOfExperience()}+</span>
         </div>
         {/* Label rectangle */}
-        <div className='bg-accent font-condensed text-white h-[72px] flex flex-col items-start justify-center px-[14px]'>
-          <p className='text-xl md:text-2xl font-semibold whitespace-nowrap'>Years of Experience</p>
-          <p className='text-sm md:text-base'>Automotive Repair</p>
+        <div className='bg-accent font-condensed text-white h-[72px] flex flex-col items-start justify-center px-[18px] flex-1'>
+          <p className='text-2xl font-semibold whitespace-nowrap'>Years of Experience</p>
+          <p className='text-base'>Automotive Repair</p>
         </div>
       </div>
     </div>
