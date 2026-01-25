@@ -5,45 +5,7 @@ import ReviewCard from './ReviewCard'
 import { usePrevNextButtons } from '@/components/ui/embla/ArrowButtons'
 import { PrevButton, NextButton } from '@/components/ui/embla/ArrowButtons'
 import { useDotButton, DotButton } from '@/components/ui/embla/DotButton'
-
-const reviews = [
-  {
-    review:
-      "I've been bringing my car to ATX Reliable Wrenching for a few years now, and they never disappoint. The team is knowledgeable, honest, and always gets the job done right the first time.",
-    author: 'Wendy Stevens',
-    rating: 5,
-  },
-  {
-    review:
-      'Excellent service! They came to my house and fixed my brake issue quickly. Professional, friendly, and reasonably priced. Highly recommend!',
-    author: 'Michael Chen',
-    rating: 5,
-  },
-  {
-    review:
-      'Good experience overall. The mechanic was professional and explained everything clearly. The work was done on time and the price was fair.',
-    author: 'Sarah Johnson',
-    rating: 4,
-  },
-  {
-    review:
-      "They fixed my transmission problem that other shops couldn't figure out. Very impressed with their diagnostic skills and attention to detail.",
-    author: 'Robert Martinez',
-    rating: 5,
-  },
-  {
-    review:
-      'Decent service, but had to wait a bit longer than expected. The work quality was good though, and they were upfront about the costs.',
-    author: 'Jennifer Lee',
-    rating: 3,
-  },
-  {
-    review:
-      'Outstanding customer service! They went above and beyond to help me with my car troubles. Will definitely be coming back for all my automotive needs.',
-    author: 'David Thompson',
-    rating: 5,
-  },
-]
+import { reviews } from './reviewsDetails'
 
 export default function ReviewsCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
