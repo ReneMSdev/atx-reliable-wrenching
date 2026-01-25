@@ -1,7 +1,7 @@
 export const reviews = [
   {
     review: 'Excellent service, Josh was great and had me back on the road in 45 minutes!',
-    author: 'Autin Davis',
+    author: 'Austin Davis',
     rating: 5,
   },
   {
@@ -16,7 +16,7 @@ export const reviews = [
   },
   {
     review: `Very professional and punctual on time. Very happy with service and great pricing. Highly recommended!!`,
-    author: 'Eduado Madiedo',
+    author: 'Eduardo Madiedo',
     rating: 5,
   },
   {
